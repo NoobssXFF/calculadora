@@ -180,6 +180,7 @@
   
   <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
   <script>
+
     const ranks = {
       Porco: [1, 1.05, 1.10],
       Ovelha: [1.15, 1.20, 1.25],
@@ -195,6 +196,23 @@
       Guardian: [3.13, 3.21, 3.29],
       Golem: [3.38, 3.47, 3.56],
       Blaze: [3.65, 3.74, 3.83],
+    };
+
+    const ranksplatacao = {
+      Porco: [1, 1.02, 1.04],
+      Ovelha: [1.06, 1.08, 1.10],
+      Vaca: [1.12, 1.14, 1.16],
+      Galinha: [1.19, 1.22, 1.25],
+      Coelho: [1.28, 1.31, 1.34],
+      Jaguatirica: [1.37, 1.40, 1.43],
+      Lobo: [1.47, 1.51, 1.55],
+      Zumbi: [1.59, 1.63, 1.67],
+      Aranha: [1.71, 1.75, 1.79],
+      Esqueleto: [1.84, 1.89, 1.94],
+      Creeper: [1.99, 2.04, 2.09],
+      Guardian: [2.14, 2.19, 2.24],
+      Golem: [2.30, 2.36, 2.42],
+      Blaze: [2.48, 2.54, 2.60],
     };
 
     const selectRank = document.getElementById("rank");
@@ -235,7 +253,10 @@
 
 
       if (rank && level && itemPrice) {
-        const fator = ranks[rank][level - 1];
+
+        const isPlantacao = selectItem.selectedOptions[0].parentElement.label === "Plantações";
+
+        const fator = isPlantacao ? ranksplatacao[rank][level -1] : ranks[rank][level - 1];
         let precoFinal = itemPrice * fator;
 
         precoFinal *= boosterVenda * boosterMina;
