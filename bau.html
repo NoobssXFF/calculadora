@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="pt-br" class="h-100">
+
+<head>
+  <script src="assets/js/color-modes.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Calculadora feita para Calcular o preços dos drops/plantações de cada Rank">
+  <meta name="author" content="Noobss">
+  <title>NerdZone Calc - Calcular Bau</title>
+
+  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="assets/css/calc.css" rel="stylesheet">
+</head>
+
+<body class="d-flex h-100">
+
+  <div class="calc-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div>
+        <h3 class="float-md-start mb-0">Calculadora</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <a class="nav-link fw-bold py-1 px-0" href="index.html">Calculadora</a>
+          <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="bau.html">Calcular Bau</a>
+          <a class="nav-link fw-bold py-1 px-0" href="#">Em breve</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="px-3">
+      <h1 class="text-center">Calcule o bau cheio de Item</h1>
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+
+            <!-- Rank -->
+            <div class="col-md-4">
+              <div class="mb-3">
+                <label for="rank" class="form-label">Rank:</label>
+                <select class="form-select" id="rank" aria-label="Select Rank">
+                  <option selected disabled>Selecione o Rank</option>
+                  <option value="Porco">Porco</option>
+                  <option value="Ovelha">Ovelha</option>
+                  <option value="Vaca">Vaca</option>
+                  <option value="Galinha">Galinha</option>
+                  <option value="Coelho">Coelho</option>
+                  <option value="Jaguatirica">Jaguatirica</option>
+                  <option value="Lobo">Lobo</option>
+                  <option value="Zumbi">Zumbi</option>
+                  <option value="Aranha">Aranha</option>
+                  <option value="Esqueleto">Esqueleto</option>
+                  <option value="Creeper">Creeper</option>
+                  <option value="Guardian">Guardian</option>
+                  <option value="Golem">Golem</option>
+                  <option value="Blaze">Blaze</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Level -->
+            <div class="col-md-4">
+              <div class="mb-3">
+                <label for="ranklevel" class="form-label">Rank Level:</label>
+                <select class="form-select" id="ranklevel" aria-label="Select Level" disabled>
+                  <option selected disabled>Selecione o Level</option>
+                  <option value="1">Level 1</option>
+                  <option value="2">Level 2</option>
+                  <option value="3">Level 3</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div class="col-md-4">
+              <div class="mb-4">
+                <label for="item" class="form-label">Item:</label>
+                <select class="form-select" id="item" aria-label="Select Item">
+                  <option selected disabled>Selecione o Item</option>
+                  <optgroup label="Minérios">
+                    <option value="121600">Quartzo</option>
+                    <option value="152000">Obsidian</option>
+                    <option value="1824000">TNT</option>
+                  </optgroup>
+
+                  <optgroup label="Plantações">
+                    <option value="31860">Cacau</option>
+                    <option value="176320">Cacto</option>
+                    <option value="120020">Cenoura</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+
+            <!-- Booster de vendas -->
+            <div class="col-md-6">
+              <div class="mb-4">
+                <label for="boostervenda" class="form-label">Booster de Vendas:</label>
+                <select class="form-select" id="boostervenda" aria-label="Select Booster">
+                  <option selected disabled>Selecione o Booster</option>
+                  <option value="1.7">Booster 70%</option>
+                  <option value="1.75">Booster 75%</option>
+                  <option value="1.8">Booster 80%</option>
+                  <option value="1.85">Booster 85%</option>
+                </select>
+              </div>
+            </div>
+            
+            <!-- Booster de Mineração -->
+            <div class="col-md-6">
+              <div class="mb-4">
+                <label for="boostermina" class="form-label">Booster de Mineração:</label>
+                <select class="form-select" id="boostermina" aria-label="Select Booster">
+                  <option selected disabled>Selecione o Booster</option>
+                  <option value="1.20">Booster 20% (Level 1800)</option>
+                  <option value="1.30">Booster 30% (Level 5000)</option>
+                  <option value="1.45">Booster 45% (Level 8000)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Capacete 2x -->
+            <div class="col-md-3">
+              <div class="form-check form-switch mb-4">
+                <input id="capa2" name="capa2" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Capacete 2x: </label>
+              </div>
+            </div>
+
+            <!-- Peitoral 2.1x -->
+            <div class="col-md-3">
+              <div class="form-check form-switch mb-4">
+                <input id="peito2" name="peito2" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Peitoral 2.1x: </label>
+              </div>
+            </div>
+
+            <!-- Calça 2x -->
+            <div class="col-md-3">
+              <div class="form-check form-switch mb-4">
+                <input id="calca2" name="calca2" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Calça 2x: </label>
+              </div>
+            </div>
+
+            <!-- Botas 2x -->
+            <div class="col-md-3">
+              <div class="form-check form-switch mb-4">
+                <input id="bota2" name="bota2" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Botas 2x: </label>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-12" style="margin: 0 25%;">
+            <div class="mt-5">
+              <div class="form-check form-switch mb-4">
+                <input id="valorcompactado" name="valorcompactado" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Exibir valor por pack compactado: </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="mt-5">
+              <label for="total" class="form-label d-block text-center fs-3">Preço por pack:</label>
+              <input type="text" class="form-control w-50 text-center mx-auto border border-2 border-success fs-4" id="total" value="0" disabled>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="mt-auto text-white-50 text-center">
+      <p>NerdZone Calc, by <a href="https://github.com/NoobssXFF" class="text-white">Noobss</a>.</p>
+    </footer>
+  </div>
+  
+  <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+
+    const ranks = {
+      Porco: [1, 1.05, 1.10],
+      Ovelha: [1.15, 1.20, 1.25],
+      Vaca: [1.30, 1.35, 1.40],
+      Galinha: [1.46, 1.52, 1.58],
+      Coelho: [1.64, 1.70, 1.76],
+      Jaguatirica: [1.82, 1.88, 1.94],
+      Lobo: [2.01, 2.08, 2.15],
+      Zumbi: [2.22, 2.29, 2.36],
+      Aranha: [2.43, 2.50, 2.57],
+      Esqueleto: [2.65, 2.73, 2.81],
+      Creeper: [2.89, 2.97, 3.05],
+      Guardian: [3.13, 3.21, 3.29],
+      Golem: [3.38, 3.47, 3.56],
+      Blaze: [3.65, 3.74, 3.83],
+    };
+
+    const ranksplatacao = {
+      Porco: [1, 1.02, 1.04],
+      Ovelha: [1.06, 1.08, 1.10],
+      Vaca: [1.12, 1.14, 1.16],
+      Galinha: [1.19, 1.22, 1.25],
+      Coelho: [1.28, 1.31, 1.34],
+      Jaguatirica: [1.37, 1.40, 1.43],
+      Lobo: [1.47, 1.51, 1.55],
+      Zumbi: [1.59, 1.63, 1.67],
+      Aranha: [1.71, 1.75, 1.79],
+      Esqueleto: [1.84, 1.89, 1.94],
+      Creeper: [1.99, 2.04, 2.09],
+      Guardian: [2.14, 2.19, 2.24],
+      Golem: [2.30, 2.36, 2.42],
+      Blaze: [2.48, 2.54, 2.60],
+    };
+
+    const selectRank = document.getElementById("rank");
+    const selectLevel = document.getElementById("ranklevel");
+    const selectItem = document.getElementById("item");
+    const selectBoosterVenda = document.getElementById("boostervenda");
+    const selectBoosterMina = document.getElementById("boostermina");
+    const totalInput = document.getElementById("total");
+
+    // Atualizar os levels de acordo com o rank selecionado
+    selectRank.addEventListener("change", () => {
+      const rankValue = selectRank.value;
+      const levels = ranks[rankValue];
+
+      // Habilitar o select de level
+      selectLevel.disabled = false;
+
+      // Limpar níveis e preencher de acordo com o rank
+      selectLevel.innerHTML = '<option selected disabled>Selecione o Level</option>';
+      levels.forEach((_, index) => {
+        let option = document.createElement("option");
+        option.value = index + 1;
+        option.textContent = `Level ${index + 1}`;
+        selectLevel.appendChild(option);
+      });
+
+      // Resetar o preço
+      totalInput.value = "0";
+    });
+
+    // Calcular o preço baseado no rank, level e item
+    function calcularPreco() {
+      const rank = selectRank.value;
+      const level = parseInt(selectLevel.value);
+      const itemPrice = parseInt(selectItem.value);
+      const boosterVenda = isNaN(parseFloat(selectBoosterVenda.value)) ? 1 : parseFloat(selectBoosterVenda.value);
+      const boosterMina = isNaN(parseFloat(selectBoosterMina.value)) ? 1 : parseFloat(selectBoosterMina.value);
+
+
+      if (rank && level && itemPrice) {
+
+        const isPlantacao = selectItem.selectedOptions[0].parentElement.label === "Plantações";
+
+        const fator = isPlantacao ? ranksplatacao[rank][level -1] : ranks[rank][level - 1];
+        let precoFinal = itemPrice * fator;
+
+        precoFinal *= boosterVenda * boosterMina;
+
+        const capa2 = document.getElementById("capa2").checked ? 2 : 1;
+        const peito2 = document.getElementById("peito2").checked ? 2.1 : 1;
+        const calca2 = document.getElementById("calca2").checked ? 2 : 1;
+        const bota2 = document.getElementById("bota2").checked ? 2 : 1;
+
+        precoFinal *= capa2 * peito2 * calca2 * bota2;
+
+        const valorcompactado = document.getElementById("valorcompactado").checked;
+        if (valorcompactado) {
+          precoFinal *= 64; // multiplicar por 64 para o valor por pack compactado
+        }
+        
+        // Formatar o preço
+        formatarPreco(precoFinal);
+      }
+    }
+
+    function formatarPreco(preco) {
+      if (preco <= 1e3) {
+        totalInput.value = preco.toLocaleString();
+      } else if (preco <= 1e6) {
+        totalInput.value = (preco / 1e3).toFixed(2) + "K";
+      } else if (preco <= 1e9) {
+        totalInput.value = (preco / 1e6).toFixed(2) + "M";
+      } else if (preco <= 1e12) {
+        totalInput.value = (preco / 1e9).toFixed(2) + "B";
+      } else if (preco <= 1e15) {
+        totalInput.value = (preco / 1e12).toFixed(2) + "T";
+      } else if (preco <= 1e18) {
+        totalInput.value = (preco / 1e15).toFixed(2) + "Q";
+      } else if (preco <= 1e21) {
+        totalInput.value = (preco / 1e18).toFixed(2) + "Qi";
+      } else if (preco <= 1e24) {
+        totalInput.value = (preco / 1e21).toFixed(2) + "Sx";
+      } else if (preco <= 1e27) {
+        totalInput.value = (preco / 1e24).toFixed(2) + "Sp";
+      } else if (preco <= 1e30) {
+        totalInput.value = (preco / 1e27).toFixed(2) + "O";
+      }
+    }
+
+    // Atualizar preço ao mudar o rank, level, item ou boosters
+    selectRank.addEventListener("change", calcularPreco);
+    selectLevel.addEventListener("change", calcularPreco);
+    selectItem.addEventListener("change", calcularPreco);
+    selectBoosterVenda.addEventListener("change", calcularPreco);
+    selectBoosterMina.addEventListener("change", calcularPreco);
+    // Atualizar preço ao mudar os checkboxes
+    document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+      checkbox.addEventListener("change", calcularPreco);
+    });
+  </script>
+</body>
+
+</html>
